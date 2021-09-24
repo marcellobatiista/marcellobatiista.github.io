@@ -59,7 +59,9 @@ aside {
     margin-left: 25px;
     /*background: chocolate;*/
     float: left;
-    margin-top: 40px;
+    margin-top: 49px;
+    border: solid 1px gray;
+    border-radius: 20px;
 
 }
 
@@ -93,9 +95,6 @@ aside ul li a {
 aside div.descricao {
     padding-left: 30px;
     color: white;
-}
-aside div.line {
-    border-bottom: solid 1px gray;
 }
 
 aside ul li a.projetos {
