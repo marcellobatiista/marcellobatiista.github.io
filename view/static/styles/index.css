@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'VT323', monospace;
+  background: black url("../imagens/fundo.jpg") no-repeat fixed;
+  background-size: 1400px;
+}
+
+#conteudo {
+  background-color: rgba(0,0,0,.9);
+  filter: opacity(90%);
+}

@@ -1,21 +1,47 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
-    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="myValues">
+    <inspection_tool class="HttpUrlsUsage" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSUnresolvedLibraryURL" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
         <value>
-          <list size="7">
-            <item index="0" class="java.lang.String" itemvalue="nobr" />
-            <item index="1" class="java.lang.String" itemvalue="noembed" />
-            <item index="2" class="java.lang.String" itemvalue="comment" />
-            <item index="3" class="java.lang.String" itemvalue="noscript" />
-            <item index="4" class="java.lang.String" itemvalue="embed" />
-            <item index="5" class="java.lang.String" itemvalue="script" />
-            <item index="6" class="java.lang.String" itemvalue="ul" />
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="pyrogram" />
+            <item index="1" class="java.lang.String" itemvalue="socketio" />
           </list>
         </value>
       </option>
-      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E303" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="dicgram.cliente.Bot.sendmessage" />
+          <option value="software.dicgram.cliente.Bot.sendmessage" />
+          <option value="dicgram.cliente.Bot.getme" />
+          <option value="dicgram.cliente.Bot.username" />
+          <option value="dicgram.cliente.Bot.send_message" />
+          <option value="dicgram.cliente.Bot.get_me" />
+          <option value="dicgram.cliente.Bot.edit_message_text" />
+          <option value="typing.Coroutine.text" />
+          <option value="dicgram.cliente.Bot.delete_message" />
+          <option value="dicgram.cliente.Bot.delete_messages" />
+        </list>
+      </option>
     </inspection_tool>
   </profile>
 </component>
