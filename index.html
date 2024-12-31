@@ -27,6 +27,12 @@
             flex-direction: column; /* Cabeçalho em cima, resto embaixo */
         }
 
+        /* Tirar sublinhado dos links e cor padrão */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
         /* CABEÇALHO PRINCIPAL (apenas título) */
         .main-header {
             background-color: #1f1f1f;
@@ -285,18 +291,24 @@
                         <span>Sobre</span>
                     </div>
                 </a>
-                <div class="menu-item servicos">
-                    <i class="bi bi-briefcase"></i>
-                    <span>Serviços</span>
-                </div>
-                <div class="menu-item portfolio">
-                    <i class="bi bi-collection"></i>
-                    <span>Portfólio</span>
-                </div>
-                <div class="menu-item contato">
-                    <i class="bi bi-envelope"></i>
-                    <span>Contato</span>
-                </div>
+                <a href="#">
+                    <div class="menu-item servicos">
+                        <i class="bi bi-briefcase"></i>
+                        <span>Serviços</span>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="menu-item portfolio">
+                        <i class="bi bi-collection"></i>
+                        <span>Portfólio</span>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="menu-item contato">
+                        <i class="bi bi-envelope"></i>
+                        <span>Contato</span>
+                    </div>
+                </a>
             </div>
 
             <div class="sections">
