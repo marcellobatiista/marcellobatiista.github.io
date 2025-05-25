@@ -38,12 +38,6 @@
             background-color: #1f1f1f;
             border-bottom: 1px solid #333;
             padding: 1rem;
-            text-align: center;
-        }
-
-        .main-header .title {
-            font-size: 1.2rem;
-            color: #ccc;
         }
 
         /* WRAPPER QUE CONTÉM A SIDEBAR E O CONTEÚDO (lado a lado em desktop) */
@@ -337,13 +331,19 @@
                 margin-left: 60px;
             }
         }
+
+        .article-date {
+            font-size: 0.95rem;
+            color: #bdbdbd;
+            text-align: left;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
 <!-- CABEÇALHO PRINCIPAL -->
-<div class="main-header">
-    <div class="title">@marcellobatiista</div>
-</div>
+<div class="main-header"></div>
 
 <!-- WRAPPER (SIDEBAR + CONTEÚDO) -->
 <div class="wrapper">
@@ -379,6 +379,7 @@
     <!-- CONTEÚDO PRINCIPAL -->
     <div class="main-content">
         <div class="main-body">
+            <div class="article-date">25/05/2025</div>
             <h1 class="book-title">Krishnamurti sobre IA — o papo reto</h1>
             
             <div class="book-intro">
