@@ -59,16 +59,22 @@
             padding: 1rem;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            height: calc(100vh - 60px); /* altura total menos o header */
             position: relative; /* para posicionar o botão absolute */
             transition: width 0.3s, transform 0.3s;
+        }
+
+        .sidebar-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Botão de recolher/expandir dentro da sidebar */
         .toggle-button {
             position: absolute;
             top: 1rem;
-            right: -15px; /* faz o botão “sair” um pouco pra fora da sidebar */
+            right: -15px; /* faz o botão "sair" um pouco pra fora da sidebar */
             background-color: #333;
             color: #fff;
             border: none;
@@ -179,11 +185,13 @@
             color: #fff;
         }
 
+        /* Rodapé da Sidebar */
         .sidebar-bottom {
             color: #aaa;
             font-size: 0.8rem;
             border-top: 1px solid #333;
             padding-top: 1rem;
+            margin-top: auto;
         }
 
         .sidebar-bottom a {
@@ -231,7 +239,7 @@
                 position: relative;
             }
 
-            /* SIDEBAR passa a ficar “sobreposta” ao conteúdo */
+            /* SIDEBAR passa a ficar "sobreposta" ao conteúdo */
             .sidebar {
                 position: fixed;
                 top: 0;
@@ -275,35 +283,16 @@
         <!-- Botão dentro da sidebar -->
         <button class="toggle-button" id="toggleBtn" onclick="toggleSidebar()">«</button>
 
-        <!-- Conteúdo da Sidebar -->
-        <div>
+        <div class="sidebar-content">
             <div class="sidebar-top">
-                <h3>Freelancer</h3>
-                <a href="https://marcellobatiista.github.io/">
-                    <div class="menu-item home">
-                        <i class="bi bi-house"></i>
-                        <span>Home</span>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="menu-item sobre">
-                        <i class="bi bi-person"></i>
-                        <span>Sobre</span>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="menu-item servicos">
-                        <i class="bi bi-briefcase"></i>
-                        <span>Serviços</span>
-                    </div>
-                </a>
+                <h3>Menu</h3>
                 <a href="#">
                     <div class="menu-item portfolio">
                         <i class="bi bi-collection"></i>
-                        <span>Portfólio</span>
+                        <span>Projetos</span>
                     </div>
                 </a>
-                <a href="#">
+                <a href="https://t.me/SP4CNE" target="_blank" rel="noopener noreferrer">
                     <div class="menu-item contato">
                         <i class="bi bi-envelope"></i>
                         <span>Contato</span>
@@ -311,18 +300,10 @@
                 </a>
             </div>
 
-            <div class="sections">
-                <h3>Blog</h3>
-                <div class="section-item">Artigos</div>
-                <div class="section-item">Tutoriais</div>
-                <div class="section-item">Projetos Pessoais</div>
-                <div class="section-item">Dicas de Freelance</div>
+            <!-- Rodapé da Sidebar -->
+            <div class="sidebar-bottom">
+                <a href="https://link.mercadopago.com.br/doarumcafe" target="_blank" rel="noopener noreferrer">Doar um Café ☕️</a>
             </div>
-        </div>
-
-        <!-- Rodapé da Sidebar -->
-        <div class="sidebar-bottom">
-            <a href="#">Doar um Café ☕️</a>
         </div>
     </div>
 
