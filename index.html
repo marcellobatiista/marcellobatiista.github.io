@@ -59,9 +59,12 @@
             padding: 1rem;
             display: flex;
             flex-direction: column;
-            height: calc(100vh - 60px); /* altura total menos o header */
-            position: relative; /* para posicionar o botão absolute */
+            height: 100vh; /* altura total da viewport */
+            position: fixed; /* fixa durante a rolagem */
+            left: 0;
+            top: 0;
             transition: width 0.3s, transform 0.3s;
+            z-index: 1000;
         }
 
         .sidebar-content {
@@ -210,6 +213,7 @@
             display: flex;
             flex-direction: column;
             padding: 1rem;
+            margin-left: 250px; /* mesma largura da sidebar */
             transition: margin-left 0.3s;
         }
 
@@ -217,11 +221,62 @@
         .main-body {
             flex: 1;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .book-title {
             font-size: 2rem;
-            color: #fff;
+            font-weight: bold;
+            margin-bottom: 2rem;
             text-align: center;
+            color: #fff;
+        }
+
+        .book-intro {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #e0e0e0;
+        }
+
+        .book-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .book-section h2 {
+            font-size: 1.4rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .book-section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            color: #e0e0e0;
+        }
+
+        .book-summary {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .book-summary h2 {
+            font-size: 1.4rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
         }
 
         /* Rodapé do conteúdo (agora apenas com uma frase) */
@@ -231,6 +286,14 @@
             text-align: center;
             font-size: 0.8rem;
             color: #ccc;
+        }
+
+        .book-image {
+            display: block;
+            margin: 0 auto 1.5rem auto;
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
         }
 
         /* ========== RESPONSIVO (MOBILE) ========== */
@@ -267,6 +330,13 @@
                 width: 100%;
             }
         }
+
+        /* Ajuste para quando a sidebar estiver colapsada */
+        @media (min-width: 769px) {
+            .main-content.sidebar-collapsed {
+                margin-left: 60px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -285,7 +355,6 @@
 
         <div class="sidebar-content">
             <div class="sidebar-top">
-                <h3>Menu</h3>
                 <a href="#">
                     <div class="menu-item portfolio">
                         <i class="bi bi-collection"></i>
@@ -310,7 +379,37 @@
     <!-- CONTEÚDO PRINCIPAL -->
     <div class="main-content">
         <div class="main-body">
-            Bem-vindo ao meu blog!
+            <h1 class="book-title">Krishnamurti sobre IA — o papo reto</h1>
+            
+            <div class="book-intro">
+                Krishnamurti não falava de IA como perigo externo. Pra ele, o problema real é a galera virar máquina antes mesmo da máquina virar gente. O risco não é a IA dominar o mundo — é a mente humana já estar operando no automático, sem nem perceber.
+            </div>
+
+            <div class="book-section">
+                <h2>1. Cérebro = Máquina programada</h2>
+                <p>Krishnamurti dizia que a mente funciona no mesmo ciclo de uma IA: experiência → vira memória → gera conhecimento → vira pensamento. Tudo isso é repetição. E se você só repete, reage, responde igual sempre... já virou robô. A IA só está espelhando o que a gente já é: um sistema programado de respostas.</p>
+            </div>
+
+            <div class="book-section">
+                <h2>2. A crise real é interna</h2>
+                <img src="sci-fi.png" alt="Ciborgue pensativo" class="book-image" />
+                <p>Ele mandava a real: "Se a máquina consegue fazer tudo que o pensamento humano faz — criar religião, inventar gurus, escrever poema, ganhar no xadrez — então o que sobra do ser humano?" Não é drama sci-fi, é crise de identidade. A IA expõe que a gente se resume a padrões e condicionamento... se for só isso, não somos diferentes de um bot.</p>
+            </div>
+
+            <div class="book-section">
+                <h2>3. Inteligência ≠ pensamento</h2>
+                <p>Krishnamurti separava pensamento de inteligência real. Pensamento é velho, limitado, automático. Inteligência de verdade é aquela que surge quando você está presente, consciente, vendo a coisa como ela é, sem filtro. Isso nenhuma IA consegue simular, porque não vem da memória nem de dados — vem da percepção viva.</p>
+            </div>
+
+            <div class="book-section">
+                <h2>4. A IA como alerta</h2>
+                <p>Ele não via IA como inimiga, mas como sinal. Tipo: "Acorda, mano." Se a máquina tá imitando tudo que a gente pensa e faz, então tá na hora da gente sair do modo zumbi. Desenvolver presença, empatia, visão direta — coisas que a máquina não alcança. É aí que a gente vira humano de verdade.</p>
+            </div>
+
+            <div class="book-summary">
+                <h2>Resumo da obra:</h2>
+                <p>Krishnamurti jogava na cara que o maior perigo não é a IA ser parecida com a gente, é a gente já estar agindo igual a uma IA. A solução não é competir com máquina, é acessar um tipo de inteligência que ela nunca vai ter. Se a gente não fizer isso, já perdemos — não pra IA, mas pra nossa própria ignorância programada.</p>
+            </div>
         </div>
         <!-- Agora, só uma frase no rodapé -->
         <div class="main-footer">
@@ -325,6 +424,7 @@
     function toggleSidebar() {
         const sidebar = document.getElementById("sidebar");
         const toggleBtn = document.getElementById("toggleBtn");
+        const mainContent = document.querySelector(".main-content");
 
         if (window.innerWidth <= 768) {
             // Em telas pequenas, a lógica é mostrar/esconder com ".show"
@@ -340,6 +440,7 @@
             // Em telas grandes, a lógica é expandir/recolher com ".collapsed"
             sidebar.classList.toggle("collapsed");
             sidebar.classList.remove("show");
+            mainContent.classList.toggle("sidebar-collapsed");
             if (sidebar.classList.contains("collapsed")) {
                 toggleBtn.textContent = "»";
             } else {
