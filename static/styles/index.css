@@ -130,6 +130,10 @@ a {
 }
 
 /* Cores diferenciadas para cada tópico */
+.menu-item.docs i {
+    color: #00BCD4; /* azul ciano */
+}
+
 .menu-item.home i {
     color: #4CAF50; /* verde */
 }
