@@ -8,342 +8,10 @@
 
     <!-- Bootstrap Icons (CDN) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <style>
-        /* RESET BÁSICO */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #121212; /* fundo escuro */
-            color: #ffffff; /* texto claro */
-            min-height: 100vh; /* altura total da tela */
-            overflow-x: hidden; /* evita scroll lateral em mobile */
-            display: flex;
-            flex-direction: column; /* Cabeçalho em cima, resto embaixo */
-        }
-
-        /* Tirar sublinhado dos links e cor padrão */
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* CABEÇALHO PRINCIPAL (apenas título) */
-        .main-header {
-            background-color: #1f1f1f;
-            border-bottom: 1px solid #333;
-            padding: 1rem;
-        }
-
-        /* WRAPPER QUE CONTÉM A SIDEBAR E O CONTEÚDO (lado a lado em desktop) */
-        .wrapper {
-            flex: 1;
-            display: flex; /* sidebar + conteúdo */
-        }
-
-        /* SIDEBAR */
-        .sidebar {
-            width: 250px;
-            background-color: #1f1f1f;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            height: 100vh; /* altura total da viewport */
-            position: fixed; /* fixa durante a rolagem */
-            left: 0;
-            top: 0;
-            transition: width 0.3s, transform 0.3s;
-            z-index: 1000;
-        }
-
-        .sidebar-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Botão de recolher/expandir dentro da sidebar */
-        .toggle-button {
-            position: absolute;
-            top: 1rem;
-            right: -15px; /* faz o botão "sair" um pouco pra fora da sidebar */
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 0.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            z-index: 1000; /* fica acima de tudo */
-        }
-
-        .toggle-button:hover {
-            background-color: #444;
-        }
-
-        /* Quando a sidebar estiver "colapsada" (para desktop) */
-        .sidebar.collapsed {
-            width: 60px;
-        }
-
-        /* Esconde textos se colapsada (desktop) */
-        .sidebar.collapsed .sidebar-top h3,
-        .sidebar.collapsed .sections h3,
-        .sidebar.collapsed .sidebar-bottom,
-        .sidebar.collapsed .menu-item span,
-        .sidebar.collapsed .section-item {
-            display: none;
-        }
-
-        /* Conteúdo da sidebar */
-        .sidebar-top {
-            margin-bottom: 2rem;
-        }
-
-        .sidebar-top h3 {
-            font-size: 1rem;
-            font-weight: normal;
-            margin-bottom: 0.5rem;
-            color: #ccc;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        /* Menu item com ícones Bootstrap e cores diferentes */
-        .menu-item {
-            display: flex;
-            align-items: center;
-            padding: 0.5rem 0;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .menu-item:hover {
-            background-color: #2c2c2c;
-        }
-
-        .menu-item i {
-            font-size: 1.2rem;
-            margin-right: 0.5rem;
-        }
-
-        .menu-item span {
-            font-size: 0.95rem;
-        }
-
-        /* Cores diferenciadas para cada tópico */
-        .menu-item.home i {
-            color: #4CAF50; /* verde */
-        }
-
-        .menu-item.sobre i {
-            color: #FFA726; /* laranja */
-        }
-
-        .menu-item.servicos i {
-            color: #2196F3; /* azul */
-        }
-
-        .menu-item.portfolio i {
-            color: #9C27B0; /* roxo */
-        }
-
-        .menu-item.contato i {
-            color: #0088cc; /* cor azul do Telegram */
-        }
-
-        .menu-item.github i {
-            color: #fff;
-        }
-
-        .sections {
-            margin-bottom: 1.5rem;
-        }
-
-        .sections h3 {
-            font-size: 1rem;
-            font-weight: normal;
-            margin-bottom: 0.5rem;
-            color: #ccc;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .section-item {
-            padding: 0.3rem 0;
-            cursor: pointer;
-            color: #aaa;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .section-item:hover {
-            color: #fff;
-        }
-
-        /* Rodapé da Sidebar */
-        .sidebar-bottom {
-            color: #aaa;
-            font-size: 0.8rem;
-            border-top: 1px solid #333;
-            padding-top: 1rem;
-            margin-top: auto;
-        }
-
-        .sidebar-bottom a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .sidebar-bottom a:hover {
-            color: #fff;
-        }
-
-        /* CONTEÚDO PRINCIPAL */
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            margin-left: 250px; /* mesma largura da sidebar */
-            transition: margin-left 0.3s;
-        }
-
-        /* CORPO PRINCIPAL (A MENSAGEM) */
-        .main-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .book-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #fff;
-        }
-
-        .book-intro {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            text-align: justify;
-            color: #e0e0e0;
-        }
-
-        .book-section {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background-color: #1a1a1a;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .book-section h2 {
-            font-size: 1.4rem;
-            color: #4CAF50;
-            margin-bottom: 1rem;
-        }
-
-        .book-section p {
-            margin-bottom: 1rem;
-            text-align: justify;
-            color: #e0e0e0;
-        }
-
-        .book-summary {
-            margin-top: 3rem;
-            padding: 1.5rem;
-            background-color: #1a1a1a;
-            border-radius: 8px;
-            border-left: 4px solid #4CAF50;
-        }
-
-        .book-summary h2 {
-            font-size: 1.4rem;
-            color: #4CAF50;
-            margin-bottom: 1rem;
-        }
-
-        /* Rodapé do conteúdo (agora apenas com uma frase) */
-        .main-footer {
-            border-top: 1px solid #333;
-            padding-top: 1rem;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #ccc;
-        }
-
-        .book-image {
-            display: block;
-            margin: 0 auto 1.5rem auto;
-            max-width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-        }
-
-        /* ========== RESPONSIVO (MOBILE) ========== */
-        @media (max-width: 768px) {
-            .wrapper {
-                position: relative;
-            }
-
-            /* SIDEBAR passa a ficar "sobreposta" ao conteúdo */
-            .sidebar {
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 100%;
-                transform: translateX(-100%);
-                z-index: 999;
-            }
-
-            .sidebar.show {
-                transform: translateX(0);
-            }
-
-            .sidebar.collapsed {
-                transform: translateX(-100%);
-            }
-
-            .toggle-button {
-                right: -15px;
-                top: 1rem;
-            }
-
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-            }
-        }
-
-        /* Ajuste para quando a sidebar estiver colapsada */
-        @media (min-width: 769px) {
-            .main-content.sidebar-collapsed {
-                margin-left: 60px;
-            }
-        }
-
-        .article-date {
-            font-size: 0.95rem;
-            color: #bdbdbd;
-            text-align: center;
-            margin-bottom: 1.2rem;
-            letter-spacing: 1px;
-        }
-    </style>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/styles/index.css">
+    <link rel="stylesheet" href="static/styles/post.css">
 </head>
 <body>
 <!-- CABEÇALHO PRINCIPAL -->
@@ -358,25 +26,28 @@
         <button class="toggle-button" id="toggleBtn" onclick="toggleSidebar()">«</button>
 
         <div class="sidebar-content">
-            <div class="sidebar-top">
-                <a href="#">
-                    <div class="menu-item portfolio">
-                        <i class="bi bi-collection"></i>
-                        <span>Projetos</span>
-                    </div>
-                </a>
-                <a href="https://github.com/marcellobatiista" target="_blank" rel="noopener noreferrer">
-                    <div class="menu-item github">
-                        <i class="bi bi-github"></i>
-                        <span>GitHub</span>
-                    </div>
-                </a>
-                <a href="https://t.me/SP4CNE" target="_blank" rel="noopener noreferrer">
-                    <div class="menu-item contato">
-                        <i class="bi bi-telegram"></i>
-                        <span>Contato</span>
-                    </div>
-                </a>
+            <!-- Conteúdo principal da sidebar -->
+            <div class="sidebar-main">
+                <div class="sidebar-top">
+                    <a href="#">
+                        <div class="menu-item portfolio">
+                            <i class="bi bi-collection"></i>
+                            <span>Projetos</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/marcellobatiista" target="_blank" rel="noopener noreferrer">
+                        <div class="menu-item github">
+                            <i class="bi bi-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                    </a>
+                    <a href="https://t.me/SP4CNE" target="_blank" rel="noopener noreferrer">
+                        <div class="menu-item contato">
+                            <i class="bi bi-telegram"></i>
+                            <span>Contato</span>
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <!-- Rodapé da Sidebar -->
