@@ -459,6 +459,30 @@
             }
         }
     }
+
+    // Função para garantir que o botão e a sidebar estejam sincronizados ao carregar/redimensionar
+    function syncSidebarToggleBtn() {
+        const sidebar = document.getElementById("sidebar");
+        const toggleBtn = document.getElementById("toggleBtn");
+        if (!sidebar || !toggleBtn) return;
+        if (window.innerWidth <= 768) {
+            // Mobile: sidebar começa oculta, seta para expandir
+            sidebar.classList.remove("show");
+            sidebar.classList.remove("collapsed");
+            toggleBtn.textContent = "»";
+        } else {
+            // Desktop: sidebar começa expandida, seta para recolher
+            sidebar.classList.remove("show");
+            sidebar.classList.remove("collapsed");
+            toggleBtn.textContent = "«";
+            const mainContent = document.querySelector(".main-content");
+            if (mainContent) mainContent.classList.remove("sidebar-collapsed");
+        }
+    }
+
+    // Sincroniza ao carregar e ao redimensionar
+    window.addEventListener('DOMContentLoaded', syncSidebarToggleBtn);
+    window.addEventListener('resize', syncSidebarToggleBtn);
 </script>
 </body>
 </html>
