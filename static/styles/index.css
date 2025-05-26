@@ -89,7 +89,8 @@ a {
 .sidebar.collapsed .sections h3,
 .sidebar.collapsed .sidebar-bottom,
 .sidebar.collapsed .menu-item span,
-.sidebar.collapsed .section-item {
+.sidebar.collapsed .section-item,
+.sidebar.collapsed .docs-arrow {
     display: none;
 }
 
@@ -259,4 +260,68 @@ a {
         margin-left: 0;
         width: 100%;
     }
+}
+
+/* Menu Docs e sua lista */
+.menu-item.docs {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.docs-arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.menu-item.docs.expanded .docs-arrow {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.docs-list {
+    display: none;
+    padding-left: 2.5rem;
+    background-color: #2c2c2c;
+    border-radius: 0 0 4px 4px;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.docs-list.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.docs-item {
+    padding: 0.5rem 0;
+    color: #ccc;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.docs-item:hover {
+    color: #fff;
 } 

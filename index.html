@@ -41,12 +41,18 @@
                             <span>GitHub</span>
                         </div>
                     </a>
-                    <a href="#">
-                        <div class="menu-item docs">
-                            <i class="bi bi-book"></i>
-                            <span>Docs</span>
-                        </div>
-                    </a>
+                    <div class="menu-item docs" onclick="toggleDocs(event)">
+                        <i class="bi bi-book"></i>
+                        <span>Docs</span>
+                        <i class="bi bi-chevron-down docs-arrow"></i>
+                    </div>
+                    <div class="docs-list" id="docsList">
+                        <a href="#" onclick="loadPost('voce-e-livre-ou-so-esta-bem-programado.html')">
+                            <div class="docs-item">
+                                <span>Você é livre ou só está bem programado?</span>
+                            </div>
+                        </a>
+                    </div>
                     <a href="https://t.me/SP4CNE" target="_blank" rel="noopener noreferrer">
                         <div class="menu-item contato">
                             <i class="bi bi-telegram"></i>
@@ -82,6 +88,8 @@
         const sidebar = document.getElementById("sidebar");
         const toggleBtn = document.getElementById("toggleBtn");
         const mainContent = document.querySelector(".main-content");
+        const docsMenu = document.querySelector('.menu-item.docs');
+        const docsList = document.getElementById('docsList');
 
         if (window.innerWidth <= 768) {
             // Em telas pequenas, a lógica é mostrar/esconder com ".show"
@@ -98,8 +106,12 @@
             sidebar.classList.toggle("collapsed");
             sidebar.classList.remove("show");
             mainContent.classList.toggle("sidebar-collapsed");
+            
+            // Se a sidebar estiver colapsada, esconde a lista de Docs
             if (sidebar.classList.contains("collapsed")) {
                 toggleBtn.textContent = "»";
+                docsMenu.classList.remove("expanded");
+                docsList.classList.remove("show");
             } else {
                 toggleBtn.textContent = "«";
             }
@@ -124,6 +136,38 @@
             const mainContent = document.querySelector(".main-content");
             if (mainContent) mainContent.classList.remove("sidebar-collapsed");
         }
+    }
+
+    // Função para expandir/recolher a lista de posts
+    function toggleDocs(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const docsMenu = document.querySelector('.menu-item.docs');
+        const docsList = document.getElementById('docsList');
+        
+        // Toggle das classes
+        docsMenu.classList.toggle('expanded');
+        docsList.classList.toggle('show');
+    }
+
+    // Função para carregar um post
+    function loadPost(postFile) {
+        fetch(`templates/posts/${postFile}`)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('post-content').innerHTML = html;
+                // Fecha a sidebar em mobile após clicar em um post
+                if (window.innerWidth <= 768) {
+                    const sidebar = document.getElementById("sidebar");
+                    const toggleBtn = document.getElementById("toggleBtn");
+                    sidebar.classList.remove("show");
+                    toggleBtn.textContent = "»";
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o post:', error);
+            });
     }
 
     // Sincroniza ao carregar e ao redimensionar

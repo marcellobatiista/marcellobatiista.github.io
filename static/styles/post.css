@@ -41,7 +41,7 @@
 }
 
 .book-section p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     text-align: justify;
     color: #e0e0e0;
 }
@@ -74,6 +74,125 @@
     text-align: center;
     margin-bottom: 1.2rem;
     letter-spacing: 1px;
+}
+
+.instruction-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.instruction-list li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e0e0e0;
+}
+
+.instruction-list li i {
+    color: #00BCD4;
+    font-size: 0.9rem;
+}
+
+.highlight-text {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.highlight-text code {
+    color: #00BCD4;
+    font-family: 'Consolas', monospace;
+    padding: 0.2rem 0.4rem;
+    background-color: #2c2c2c;
+    border-radius: 3px;
+}
+
+.highlight-word {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.reaction-list {
+    margin: 1.5rem 0;
+}
+
+.reaction-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.8rem 0;
+    padding: 0.5rem;
+    background-color: #2c2c2c;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.reaction-item:hover {
+    background-color: #333;
+}
+
+.reaction-item .trigger {
+    color: #FFA726;
+    font-weight: 500;
+}
+
+.reaction-item .response {
+    color: #e0e0e0;
+}
+
+.reaction-item i {
+    color: #00BCD4;
+    font-size: 0.9rem;
+}
+
+.reaction-emphasis {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4CAF50;
+    margin: 1.5rem 0;
+    font-weight: 500;
+}
+
+.reflection-questions {
+    margin: 1.5rem 0;
+}
+
+.question-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #2c2c2c;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.question-item:hover {
+    background-color: #333;
+}
+
+.question-item i {
+    color: #4CAF50;
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.question-item p {
+    margin: 0;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+}
+
+.observation-text {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4CAF50;
+    margin: 1.5rem 0;
+    font-weight: 500;
 }
 
 /* RESPONSIVO */
