@@ -312,16 +312,69 @@ a {
 .docs-item {
     padding: 0.5rem 0;
     color: #ccc;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     transition: color 0.2s;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 200px;
+    max-width: 190px;
     user-select: none;
     -webkit-user-select: none;
 }
 
 .docs-item:hover {
     color: #fff;
+}
+
+/* Estilo para o item ativo */
+.docs-item.active {
+    color: #00BCD4; /* Mesma cor do ícone do Docs */
+    font-weight: 500;
+    background-color: rgba(0, 188, 212, 0.1); /* Fundo sutil com a cor do ícone */
+    border-radius: 4px;
+    padding: 0.5rem 0.5rem;
+    margin: 0 -0.5rem; /* Compensa o padding para alinhar com os outros itens */
+}
+
+/* Estilos para o submenu */
+.menu-item.submenu {
+    padding-left: 1.5rem;
+}
+
+.menu-item.submenu i {
+    color: #00BCD4;
+}
+
+.submenu-arrow {
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+.menu-item.submenu.expanded .submenu-arrow {
+    transform: rotate(180deg);
+}
+
+.submenu-list {
+    display: none;
+    padding-left: 1rem;
+    margin-top: 0.2rem;
+}
+
+.submenu-list.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+.docs-list {
+    display: none;
+    padding-left: 1rem;
+}
+
+.docs-list.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+.menu-item.submenu span {
+    font-size: 0.85rem;
 } 

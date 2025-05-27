@@ -35,49 +35,56 @@
                             <span>Projetos</span>
                         </div>
                     </a>
-                    <a href="https://github.com/marcellobatiista" target="_blank" rel="noopener noreferrer">
-                        <div class="menu-item github">
-                            <i class="bi bi-github"></i>
-                            <span>GitHub</span>
-                        </div>
-                    </a>
                     <div class="menu-item docs" onclick="toggleDocs(event)">
                         <i class="bi bi-book"></i>
                         <span>Docs</span>
                         <i class="bi bi-chevron-down docs-arrow"></i>
                     </div>
                     <div class="docs-list" id="docsList">
-                        <a href="#" onclick="loadPost('voce-e-livre-ou-so-esta-bem-programado.html')">
-                            <div class="docs-item">
-                                <span>Você é livre ou só está bem programado?</span>
-                            </div>
-                        </a>
-                        <a href="#" onclick="loadPost('voce-pensa-ou-so-repete.html')">
-                            <div class="docs-item">
-                                <span>Você pensa… ou só repete?</span>
-                            </div>
-                        </a>
-                        <a href="#" onclick="loadPost('a-armadilha-da-produtividade-vazia.html')">
-                            <div class="docs-item">
-                                <span>A armadilha da produtividade vazia</span>
-                            </div>
-                        </a>
-                        <a href="#" onclick="loadPost('por-que-o-silencio-te-assusta.html')">
-                            <div class="docs-item">
-                                <span>Por que o silêncio te assusta?</span>
-                            </div>
-                        </a>
-                        <a href="#" onclick="loadPost('consciencia-e-o-novo-codigo-fonte.html')">
-                            <div class="docs-item">
-                                <span>Consciência é o novo código-fonte</span>
-                            </div>
-                        </a>
-                        <a href="#" onclick="loadPost('autoconhecimento-nao-vende.html')">
-                            <div class="docs-item">
-                                <span>Autoconhecimento não vende, por isso ninguém te ensina</span>
-                            </div>
-                        </a>
+                        <div class="menu-item submenu" onclick="toggleSubmenu(event)">
+                            <i class="bi bi-journal-text"></i>
+                            <span>Alguns pensamentos</span>
+                            <i class="bi bi-chevron-down submenu-arrow"></i>
+                        </div>
+                        <div class="submenu-list" id="submenuList">
+                            <a href="#" onclick="loadPost('voce-e-livre-ou-so-esta-bem-programado.html')">
+                                <div class="docs-item">
+                                    <span>Você é livre ou só está bem programado?</span>
+                                </div>
+                            </a>
+                            <a href="#" onclick="loadPost('voce-pensa-ou-so-repete.html')">
+                                <div class="docs-item">
+                                    <span>Você pensa… ou só repete?</span>
+                                </div>
+                            </a>
+                            <a href="#" onclick="loadPost('a-armadilha-da-produtividade-vazia.html')">
+                                <div class="docs-item">
+                                    <span>A armadilha da produtividade vazia</span>
+                                </div>
+                            </a>
+                            <a href="#" onclick="loadPost('por-que-o-silencio-te-assusta.html')">
+                                <div class="docs-item">
+                                    <span>Por que o silêncio te assusta?</span>
+                                </div>
+                            </a>
+                            <a href="#" onclick="loadPost('consciencia-e-o-novo-codigo-fonte.html')">
+                                <div class="docs-item">
+                                    <span>Consciência é o novo código-fonte</span>
+                                </div>
+                            </a>
+                            <a href="#" onclick="loadPost('autoconhecimento-nao-vende.html')">
+                                <div class="docs-item">
+                                    <span>Autoconhecimento não vende, por isso ninguém te ensina</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
+                    <a href="https://github.com/marcellobatiista" target="_blank" rel="noopener noreferrer">
+                        <div class="menu-item github">
+                            <i class="bi bi-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                    </a>
                     <a href="https://t.me/SP4CNE" target="_blank" rel="noopener noreferrer">
                         <div class="menu-item contato">
                             <i class="bi bi-telegram"></i>
@@ -176,8 +183,30 @@
         docsList.classList.toggle('show');
     }
 
+    // Função para expandir/recolher o submenu
+    function toggleSubmenu(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const submenu = document.querySelector('.menu-item.submenu');
+        const submenuList = document.getElementById('submenuList');
+        
+        // Toggle das classes
+        submenu.classList.toggle('expanded');
+        submenuList.classList.toggle('show');
+    }
+
     // Função para carregar um post
     function loadPost(postFile) {
+        // Remove a classe 'active' de todos os itens
+        document.querySelectorAll('.docs-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Adiciona a classe 'active' ao item clicado
+        const clickedItem = event.currentTarget.querySelector('.docs-item');
+        clickedItem.classList.add('active');
+
         fetch(`templates/posts/${postFile}`)
             .then(response => response.text())
             .then(html => {
