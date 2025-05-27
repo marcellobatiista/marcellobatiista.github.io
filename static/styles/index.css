@@ -223,10 +223,11 @@ a {
 
 /* Rodapé do conteúdo */
 .main-footer {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
     text-align: center;
-    padding: 20px;
-    color: #666;
-    border-top: 1px solid #eee;
+    font-size: 0.8rem;
+    color: #ccc;
 }
 
 .footer-content {
