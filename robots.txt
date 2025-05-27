@@ -1,0 +1,27 @@
+# robots.txt para marcellobatiista.github.io
+
+# Permitir acesso a todos os robôs
+User-agent: *
+Allow: /
+
+# Permitir acesso ao sitemap
+Sitemap: https://marcellobatiista.github.io/sitemap.xml
+
+# Permitir indexação de imagens
+Allow: /static/images/
+
+# Permitir indexação de posts
+Allow: /templates/posts/
+
+# Desabilitar indexação de arquivos de sistema
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /vendor/
+
+# Desabilitar indexação de arquivos de configuração
+Disallow: /*.json$
+Disallow: /*.yml$
+Disallow: /*.yaml$
+Disallow: /*.config$
+Disallow: /*.conf$ 

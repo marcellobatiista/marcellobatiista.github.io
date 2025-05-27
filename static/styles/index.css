@@ -26,6 +26,7 @@ a {
     background-color: #1f1f1f;
     border-bottom: 1px solid #333;
     padding: 1rem;
+    text-align: center;
 }
 
 /* WRAPPER QUE CONTÉM A SIDEBAR E O CONTEÚDO (lado a lado em desktop) */

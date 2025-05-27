@@ -195,6 +195,56 @@
     font-weight: 500;
 }
 
+/* Estilos para posts relacionados */
+.related-posts {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.related-posts h3 {
+    color: #00BCD4;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.related-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.related-posts li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+.related-posts li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.related-posts a {
+    color: #00BCD4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.related-posts a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.related-posts li {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
     .main-body {
