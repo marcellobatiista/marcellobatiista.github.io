@@ -243,6 +243,7 @@ a {
     gap: 5px;
     font-size: 0.9em;
     color: #888;
+    cursor: help;
 }
 
 .visitor-counter i {
