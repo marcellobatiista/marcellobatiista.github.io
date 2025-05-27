@@ -26,7 +26,9 @@ a {
     background-color: #1f1f1f;
     border-bottom: 1px solid #333;
     padding: 1rem;
-    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* WRAPPER QUE CONTÉM A SIDEBAR E O CONTEÚDO (lado a lado em desktop) */
@@ -221,11 +223,33 @@ a {
 
 /* Rodapé do conteúdo */
 .main-footer {
-    border-top: 1px solid #333;
-    padding-top: 1rem;
     text-align: center;
-    font-size: 0.8rem;
-    color: #ccc;
+    padding: 20px;
+    color: #666;
+    border-top: 1px solid #eee;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.visitor-counter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.visitor-counter i {
+    font-size: 1.1em;
+}
+
+#visitor-counter {
+    font-weight: bold;
 }
 
 /* ========== RESPONSIVO (MOBILE) ========== */

@@ -34,7 +34,12 @@
 </head>
 <body>
 <!-- CABEÇALHO PRINCIPAL -->
-<header class="main-header"></header>
+<header class="main-header">
+    <div class="visitor-counter">
+        <i class="bi bi-eye"></i>
+        <span id="visitor-counter">0</span>
+    </div>
+</header>
 
 <!-- WRAPPER (SIDEBAR + CONTEÚDO) -->
 <main class="wrapper">
@@ -127,13 +132,16 @@
         </div>
         <!-- Agora, só uma frase no rodapé -->
         <div class="main-footer">
-            Observe atentamente e descubra a verdade em si mesmo.
+            <div class="footer-content">
+                <p>Observe atentamente e descubra a verdade em si mesmo.</p>
+            </div>
         </div>
     </div>
 
 </main>
 
 <!-- SCRIPT -->
+<script src="static/js/visitor-counter.js"></script>
 <script>
     function toggleSidebar() {
         const sidebar = document.getElementById("sidebar");
