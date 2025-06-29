@@ -67,12 +67,19 @@
             <!-- Conteúdo principal da sidebar -->
             <div class="sidebar-main">
                 <div class="sidebar-top">
-                    <a href="#">
-                        <div class="menu-item portfolio">
-                            <i class="bi bi-collection"></i>
-                            <span>Projetos</span>
-                        </div>
-                    </a>
+                    <div class="menu-item portfolio" onclick="toggleProjects(event)">
+                        <i class="bi bi-collection"></i>
+                        <span>Projetos</span>
+                        <i class="bi bi-chevron-down projects-arrow"></i>
+                    </div>
+                    <div class="projects-list" id="projectsList">
+                        <a href="pages/landing_promptkey.html" target="_blank">
+                            <div class="docs-item">
+                                <i class="bi bi-magic me-2"></i>
+                                <span>PromptKey - IA para Textos</span>
+                            </div>
+                        </a>
+                    </div>
                     <div class="menu-item docs" onclick="toggleDocs(event)">
                         <i class="bi bi-book"></i>
                         <span>Docs</span>
@@ -161,6 +168,8 @@
         const mainContent = document.querySelector(".main-content");
         const docsMenu = document.querySelector('.menu-item.docs');
         const docsList = document.getElementById('docsList');
+        const projectsMenu = document.querySelector('.menu-item.portfolio');
+        const projectsList = document.getElementById('projectsList');
 
         if (window.innerWidth <= 768) {
             // Em telas pequenas, a lógica é mostrar/esconder com ".show"
@@ -178,11 +187,13 @@
             sidebar.classList.remove("show");
             mainContent.classList.toggle("sidebar-collapsed");
             
-            // Se a sidebar estiver colapsada, esconde a lista de Docs
+            // Se a sidebar estiver colapsada, esconde as listas de Docs e Projetos
             if (sidebar.classList.contains("collapsed")) {
                 toggleBtn.textContent = "»";
                 docsMenu.classList.remove("expanded");
                 docsList.classList.remove("show");
+                projectsMenu.classList.remove("expanded");
+                projectsList.classList.remove("show");
             } else {
                 toggleBtn.textContent = "«";
             }
@@ -220,6 +231,19 @@
         // Toggle das classes
         docsMenu.classList.toggle('expanded');
         docsList.classList.toggle('show');
+    }
+
+    // Função para expandir/recolher a lista de projetos
+    function toggleProjects(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const projectsMenu = document.querySelector('.menu-item.portfolio');
+        const projectsList = document.getElementById('projectsList');
+        
+        // Toggle das classes
+        projectsMenu.classList.toggle('expanded');
+        projectsList.classList.toggle('show');
     }
 
     // Função para expandir/recolher o submenu

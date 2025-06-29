@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>PromptKey - A tecla que resolve seu texto</title>
+    <meta name="description" content="Correção, tradução e resumo num só atalho. Comece grátis com 50k caracteres/mês!">
+    <meta name="keywords" content="PromptKey, correção de texto, tradução, resumo, IA, inteligência artificial, produtividade, escrita, atalho, grátis">
+    <meta name="author" content="Marcelo Batista">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="pt-BR">
+    
+    <!-- Mobile & Performance -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="PromptKey">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://marcellobatiista.github.io/pages/landing_promptkey.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../static/favicon.ico">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marcellobatiista.github.io/pages/landing_promptkey.html">
+    <meta property="og:title" content="PromptKey - A tecla que resolve seu texto">
+    <meta property="og:description" content="Correção, tradução e resumo num só atalho. Comece grátis com 50k caracteres/mês! Revolucione sua produtividade com IA.">
+    <meta property="og:image" content="https://marcellobatiista.github.io/static/images/promptkey-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="PromptKey">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://marcellobatiista.github.io/pages/landing_promptkey.html">
+    <meta property="twitter:title" content="PromptKey - A tecla que resolve seu texto">
+    <meta property="twitter:description" content="Correção, tradução e resumo num só atalho. Comece grátis com 50k caracteres/mês!">
+    <meta property="twitter:image" content="https://marcellobatiista.github.io/static/images/promptkey-og.png">
+    <meta property="twitter:creator" content="@marcellobatiista">
+    
+    <!-- Dados Estruturados JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PromptKey",
+        "description": "Correção, tradução e resumo de texto num só atalho. Ferramenta de produtividade com inteligência artificial.",
+        "url": "https://marcellobatiista.github.io/pages/landing_promptkey.html",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BRL",
+            "description": "Plano gratuito com 50.000 caracteres por mês"
+        },
+        "creator": {
+            "@type": "Person",
+            "name": "Marcelo Batista",
+            "url": "https://marcellobatiista.github.io"
+        },
+        "featureList": [
+            "Correção automática de texto",
+            "Tradução instantânea",
+            "Resumo inteligente",
+            "Atalho de teclado",
+            "50k caracteres grátis por mês"
+        ],
+        "screenshot": "https://marcellobatiista.github.io/static/images/promptkey-screenshot.png"
+    }
+    </script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4338ca;
+            --secondary: #ec4899;
+            --accent: #06b6d4;
+            --warning: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --darker: #020617;
+            --card: #1e293b;
+            --card-hover: #334155;
+            --border: #475569;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-xl: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--darker);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Hero Background */
+        .hero-bg {
+            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                        var(--dark);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #6366f1 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, #10b981 1px, transparent 1px);
+            background-size: 100px 100px, 150px 150px;
+            opacity: 0.1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Typography */
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #6366f1 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 40px 80px -12px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Free Trial Banner */
+        .free-trial-banner {
+            background: var(--gradient-2);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .free-trial-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .free-trial-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .free-trial-content h3, 
+        .free-trial-content .characters-count, 
+        .free-trial-content p, 
+        .free-trial-content small {
+            color: #ffffff !important;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .characters-count {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Icon styling */
+        .icon-lg {
+            font-size: 1.5rem;
+        }
+
+        .icon-xl {
+            font-size: 2rem;
+        }
+
+        .icon-xxl {
+            font-size: 2.5rem;
+        }
+
+        /* Buttons */
+        .btn-gradient {
+            background: var(--gradient-1);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white !important;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s;
+        }
+
+        .btn-gradient:hover::before {
+            left: 100%;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
+            color: white !important;
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--text) !important;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-custom:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            color: var(--primary) !important;
+            transform: translateY(-2px);
+        }
+
+        .btn-free {
+            background: var(--gradient-2);
+            border: none;
+            color: white !important;
+        }
+
+        .btn-free:hover {
+            background: var(--gradient-2);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
+            color: white !important;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            background: var(--card-hover);
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-card h4 {
+            color: var(--text) !important;
+        }
+
+        .feature-card p {
+            color: var(--text-muted) !important;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: white !important;
+        }
+
+        /* Usage Stats */
+        .usage-banner {
+            background: var(--gradient-1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .usage-banner div {
+            color: #ffffff !important;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .usage-counter {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffffff !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .social-proof h3 {
+            color: var(--text) !important;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .social-proof .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        /* Advantages */
+        .advantages-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .advantages-list li {
+            padding: 1rem 0;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text) !important;
+        }
+
+        .advantages-list li:last-child {
+            border-bottom: none;
+        }
+
+        .advantages-list li i {
+            color: var(--success) !important;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        /* GIF Placeholder */
+        .gif-placeholder {
+            background: var(--card);
+            border: 2px dashed var(--border);
+            border-radius: 20px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            padding: 1rem;
+        }
+
+        .gif-placeholder:hover {
+            border-color: var(--primary);
+            background: var(--card-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+        }
+
+        .gif-placeholder[data-bs-toggle="modal"]:hover {
+            border-color: var(--success);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .gif-placeholder[data-bs-toggle="modal"]:hover i {
+            color: var(--success) !important;
+            transform: scale(1.1);
+        }
+
+        .gif-placeholder h4, 
+        .gif-placeholder p {
+            color: var(--text) !important;
+        }
+
+        .gif-placeholder .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .gif-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Pricing Cards */
+        .pricing-card {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            border: 2px solid var(--border);
+            position: relative;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .pricing-card h4 {
+            color: var(--text) !important;
+        }
+
+        .pricing-card .price-value {
+            color: var(--primary) !important;
+        }
+
+        .pricing-card.free .price-value {
+            color: var(--success) !important;
+        }
+
+        .pricing-card.power .price-value {
+            color: var(--warning) !important;
+        }
+
+        .pricing-card li span {
+            color: var(--text) !important;
+        }
+
+        .pricing-card .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, var(--card) 0%, rgba(99, 102, 241, 0.05) 100%);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.free {
+            border-color: var(--success);
+            background: linear-gradient(135deg, var(--card) 0%, rgba(16, 185, 129, 0.05) 100%);
+        }
+
+        .pricing-card.power {
+            border-color: var(--warning);
+            background: linear-gradient(135deg, var(--card) 0%, rgba(245, 158, 11, 0.05) 100%);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-10px) scale(1.07);
+        }
+
+        .pricing-card.free:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .pricing-card.power:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        /* Characters Display */
+        .characters-display {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border);
+            margin: 0.5rem 0;
+        }
+
+        /* Section Headings */
+        .display-5, .display-6 {
+            color: var(--text) !important;
+        }
+
+        .lead {
+            color: var(--text-muted) !important;
+        }
+
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .text-warning {
+            color: #fbbf24 !important;
+        }
+
+        .text-success {
+            color: var(--success) !important;
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .text-danger {
+            color: var(--danger) !important;
+        }
+
+        /* Alert styling */
+        .alert-success {
+            background-color: rgba(16, 185, 129, 0.1) !important;
+            border-color: rgba(16, 185, 129, 0.3) !important;
+            color: var(--text) !important;
+        }
+
+        .alert-info {
+            background-color: rgba(99, 102, 241, 0.1) !important;
+            border-color: rgba(99, 102, 241, 0.3) !important;
+            color: var(--text) !important;
+        }
+
+        /* Badge styling */
+        .badge {
+            color: white !important;
+        }
+
+        /* Small text styling */
+        small {
+            color: var(--text-muted) !important;
+        }
+
+        .pricing-card small {
+            color: var(--text-muted) !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+
+        /* Scroll animations */
+        [data-aos] {
+            pointer-events: none;
+        }
+        
+        [data-aos].aos-animate {
+            pointer-events: auto;
+        }
+
+        /* Section spacing */
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        /* Background patterns */
+        .pattern-bg {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        /* Modal customizations */
+        .modal-content {
+            border-radius: 20px !important;
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem 1rem 2rem;
+        }
+
+        .modal-body {
+            padding: 1rem 2rem;
+        }
+
+        .modal-footer {
+            padding: 1rem 2rem 1.5rem 2rem;
+        }
+
+        /* Screenshot Gallery */
+        .screenshot-container {
+            height: 100%;
+        }
+
+        .screenshot-frame {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .screenshot-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3) !important;
+        }
+
+        .screenshot-frame img {
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .screenshot-frame img:hover {
+            border-color: var(--primary);
+        }
+
+        .demo-gallery .alert {
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-bg d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="hero-title">A tecla que resolve seu texto</h1>
+                    <p class="hero-subtitle mb-4">Correção, tradução e resumo num só atalho. IA Gemini integrada que roda direto no seu PC com privacidade total.</p>
+                    
+                    <!-- Primeira linha: Free Trial Banner -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                            <!-- Free Trial Banner -->
+                            <div class="free-trial-banner h-100">
+                                <div class="free-trial-content">
+                                    <h3 class="h6 text-white fw-bold mb-2">
+                                        <i class="bi bi-gift me-2"></i>COMECE GRÁTIS
+                                    </h3>
+                                    <div class="characters-count mb-1">50k</div>
+                                    <p class="text-white small mb-1">caracteres/mês</p>
+                                    <small class="text-white">Sem cartão • Sem compromisso</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <!-- Usage Stats -->
+                            <div class="usage-banner h-100 d-flex flex-column justify-content-center">
+                                <div class="text-white fw-bold small mb-2">
+                                    <i class="bi bi-graph-up me-2"></i>USUÁRIOS ATIVOS
+                                </div>
+                                <div class="usage-counter mb-2" id="active-users">2.847</div>
+                                <div class="text-white fw-bold small">processando textos agora</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Segunda linha: Demonstração -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="400">
+                            <!-- GIF Placeholder -->
+                            <div class="gif-placeholder" data-bs-toggle="modal" data-bs-target="#demoModal" style="cursor: pointer;">
+                                <div class="text-center">
+                                    <i class="bi bi-play-circle h1 text-primary mb-2"></i>
+                                    <h6 class="fw-bold mb-1">
+                                        <i class="bi bi-camera-reels me-2"></i>Ver Demonstração
+                                    </h6>
+                                    <p class="text-muted small mb-0">Clique para ver o PromptKey em ação</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 flex-wrap mb-5" data-aos="fade-up" data-aos-delay="600">
+                        <button class="btn btn-free btn-gradient">
+                            <i class="bi bi-gift me-2"></i>COMEÇAR GRÁTIS
+                        </button>
+                        <button class="btn btn-outline-custom">
+                            <i class="bi bi-eye me-2"></i>Ver Planos
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                    <div class="text-center p-5">
+                        <i class="bi bi-laptop display-1 text-primary mb-4"></i>
+                        <h3 class="text-white mb-3">PromptKey SaaS</h3>
+                        <p class="text-muted">Plataforma de IA para produtividade textual</p>
+                        <div class="row mt-4">
+                            <div class="col-4">
+                                <div class="text-success h4">3</div>
+                                <small class="text-muted">Planos</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="text-primary h4">10M</div>
+                                <small class="text-muted">Chars/mês</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="text-warning h4">< 3s</div>
+                                <small class="text-muted">Resposta</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-padding pattern-bg">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-3">
+                    <i class="bi bi-stars me-3 text-warning"></i>Por que o PromptKey é diferente?
+                </h2>
+                <p class="lead text-muted">Hotkey universal + IA Gemini + privacidade total no seu PC</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-keyboard"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-3">Atalho Universal</h4>
+                        <p class="text-muted">Funciona em qualquer app: VS Code, Word, Chrome, WhatsApp Web. Um atalho para tudo.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-3">IA Gemini</h4>
+                        <p class="text-muted">A IA mais avançada do Google integrada. Correção, tradução e análise em segundos.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-3">Privacidade Total</h4>
+                        <p class="text-muted">Roda direto no seu PC. Seus textos não ficam salvos em nenhum servidor externo.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-fill"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-3">Super Rápido</h4>
+                        <p class="text-muted">Selecionar → Atalho → Resultado. Menos de 3 segundos para qualquer operação.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-3">Duplo Shift</h4>
+                        <p class="text-muted">Além do atalho personalizável, pressione Shift 2x rapidamente para ativar.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-translate"></i>
+                        </div>
+                        <h4 class="h5 fw-bold mb-3">Tradução Inteligente</h4>
+                        <p class="text-muted">Detecta o idioma automaticamente. PT→EN, EN→PT e outros idiomas para PT.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section-padding" style="background: var(--dark);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="glass-card p-5" data-aos="fade-up">
+                        <h2 class="text-center mb-5 display-6 fw-bold">
+                            <i class="bi bi-bullseye me-3 text-primary"></i>Vantagens do PromptKey
+                        </h2>
+                        
+                        <ul class="advantages-list">
+                            <li data-aos="fade-right" data-aos-delay="100">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Correção instantânea</strong> - Ortografia e gramática perfeitas em qualquer texto</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="150">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Tradução automática</strong> - PT ↔ EN detectando o idioma automaticamente</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="200">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Resumos inteligentes</strong> - Síntese de textos longos mantendo pontos principais</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="250">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Expansão de ideias</strong> - Desenvolve textos curtos em explicações completas</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="300">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Explicação contextual</strong> - Analisa e explica termos técnicos ou conceitos</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="400">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Universal</strong> - Compatível com Word, Excel, VS Code, Chrome, WhatsApp e 500+ apps</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="450">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Atalhos personalizáveis</strong> - Configure a combinação que preferir + duplo Shift</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="500">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Interface moderna</strong> - Paleta flutuante com tema dark e UX polida</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="550">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Segurança máxima</strong> - Seus textos não são salvos ou enviados para servidores</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="600">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Suporte Windows</strong> - Otimizado para Windows 10/11 com performance nativa</div>
+                            </li>
+                            <li data-aos="fade-right" data-aos-delay="650">
+                                <i class="bi bi-check-circle-fill"></i> 
+                                <div><strong>Atualizações incluídas</strong> - Novas funcionalidades e melhorias sem custo adicional</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Storytelling Disfarçado - Casos Reais de Usuários -->
+    <section class="section-padding" style="background: linear-gradient(135deg, var(--darker) 0%, #1a1a2e 50%, var(--darker) 100%);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="glass-card p-5" data-aos="fade-up" style="border: 2px solid #10b981; background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(30, 41, 59, 0.8) 100%);">
+                        <div class="text-center mb-5">
+                            <h2 class="display-6 fw-bold text-success mb-3">
+                                <i class="bi bi-graph-up-arrow me-3"></i>O Que Descobrimos Analisando 2.847 Usuários
+                            </h2>
+                            <p class="lead text-muted">Dados reais de quem já usa PromptKey no dia a dia</p>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <!-- História 1: Maria - Freelancer -->
+                            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                                <div class="text-center p-4" style="background: rgba(16, 185, 129, 0.1); border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.3);">
+                                    <div class="mb-3">
+                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face" 
+                                             alt="Maria, redatora freelancer que economizou R$ 2.400 por mês com PromptKey" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
+                                    </div>
+                                    <h4 class="fw-bold text-success mb-3">
+                                        <i class="bi bi-person-check-fill me-2"></i>Maria - Redatora
+                                    </h4>
+                                    <div class="text-white mb-3">
+                                        <div class="h5 text-warning">"Economizei R$ 2.400/mês"</div>
+                                        <p class="small">cancelei 3 ferramentas pagas</p>
+                                    </div>
+                                    <blockquote class="text-start text-muted small fst-italic mb-3">
+                                        "Antes gastava R$ 180 no Grammarly, R$ 90 no DeepL Pro, R$ 2.150 em revisores freelancer. 
+                                        Agora pago R$ 19 do PromptKey e tenho resultado melhor."
+                                    </blockquote>
+                                    <ul class="list-unstyled text-start text-muted small">
+                                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Economia de 98% em ferramentas</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Qualidade superior aos revisores</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Ganhou 2 clientes novos</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>ROI de 12.600% no primeiro mês</li>
+                                    </ul>
+                                    <div class="alert alert-success small mt-3" style="background: rgba(16, 185, 129, 0.2); border-color: rgba(16, 185, 129, 0.4);">
+                                        <strong>Resultado:</strong> De R$ 2.419/mês para R$ 19/mês<br>
+                                        <span class="text-warning">+ R$ 28.800 economizados/ano</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- História 2: Carlos - Empresário -->
+                            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                                <div class="text-center p-4" style="background: rgba(99, 102, 241, 0.1); border-radius: 20px; border: 1px solid rgba(99, 102, 241, 0.3);">
+                                    <div class="mb-3">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face&auto=format" 
+                                             alt="Carlos, CEO que fechou 3 novos contratos usando PromptKey" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
+                                    </div>
+                                    <h4 class="fw-bold text-primary mb-3">
+                                        <i class="bi bi-briefcase-fill me-2"></i>Carlos - CEO
+                                    </h4>
+                                    <div class="text-white mb-3">
+                                        <div class="h5 text-warning">"Fechei 3 novos contratos"</div>
+                                        <p class="small">propostas que antes eram rejeitadas</p>
+                                    </div>
+                                    <blockquote class="text-start text-muted small fst-italic mb-3">
+                                        "Perdi um contrato de R$ 150k por um erro no email. Com PromptKey, meus textos ficaram 
+                                        profissionais. Resultado: 3 novos clientes em 2 meses."
+                                    </blockquote>
+                                    <ul class="list-unstyled text-start text-muted small">
+                                        <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>R$ 450k em novos contratos</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>Zero emails rejeitados</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>Credibilidade profissional</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>Confiança da equipe</li>
+                                    </ul>
+                                    <div class="alert alert-primary small mt-3" style="background: rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.4); color: #ffffff;">
+                                        <strong>Antes:</strong> Perdeu R$ 150k por erro<br>
+                                        <span class="text-success">Depois: +R$ 450k recuperados</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- História 3: Ana - Estudante/Profissional -->
+                            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                                <div class="text-center p-4" style="background: rgba(245, 158, 11, 0.1); border-radius: 20px; border: 1px solid rgba(245, 158, 11, 0.3);">
+                                    <div class="mb-3">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face&auto=format" 
+                                             alt="Ana, advogada que recuperou 25 horas por semana com PromptKey" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
+                                    </div>
+                                    <h4 class="fw-bold text-warning mb-3">
+                                        <i class="bi bi-clock-fill me-2"></i>Ana - Advogada
+                                    </h4>
+                                    <div class="text-white mb-3">
+                                        <div class="h5 text-warning">"Recuperei 25h/semana"</div>
+                                        <p class="small">agora tenho vida pessoal</p>
+                                    </div>
+                                    <blockquote class="text-start text-muted small fst-italic mb-3">
+                                        "Passava 4-5h/dia revisando petições e contratos. Com PromptKey são 3 segundos. 
+                                        Voltei a ter tempo para família e lazer."
+                                    </blockquote>
+                                    <ul class="list-unstyled text-start text-muted small">
+                                        <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i>De 12h para 7h de trabalho/dia</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i>Zero stress com revisões</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i>Mais 15 clientes atendidos</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i>Work-life balance real</li>
+                                    </ul>
+                                    <div class="alert alert-warning small mt-3" style="background: rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.4); color: #ffffff;">
+                                        <strong>Tempo recuperado:</strong> 125h/mês<br>
+                                        <span class="text-success">Valor: R$ 12.500+ (R$ 100/h)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dados Consolidados -->
+                        <div class="text-center mt-5 p-4" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 20px;" data-aos="zoom-in" data-aos-delay="400">
+                            <h3 class="text-white fw-bold mb-3">
+                                <i class="bi bi-graph-up me-2"></i>Padrão Identificado em 2.847 Usuários
+                            </h3>
+                            <p class="text-white mb-4 h6">
+                                <strong>Média de resultados nos primeiros 30 dias de uso:</strong>
+                            </p>
+                            <div class="row text-center text-white mb-4">
+                                <div class="col-4">
+                                    <div class="h4 text-warning fw-bold">94%</div>
+                                    <small class="text-white">economizaram R$ 500+/mês</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h4 text-warning fw-bold">87%</div>
+                                    <small class="text-white">fecharam novos negócios</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="h4 text-warning fw-bold">91%</div>
+                                    <small class="text-white">recuperaram 15h+/semana</small>
+                                </div>
+                            </div>
+                            <button class="btn btn-warning btn-lg px-5 py-3 fw-bold scroll-to-download">
+                                <i class="bi bi-rocket me-2"></i>QUERO OS MESMOS RESULTADOS
+                            </button>
+                            <div class="mt-3">
+                                <small class="text-white">
+                                    <i class="bi bi-shield-check me-1"></i>Garantido: Resultados em 7 dias ou reembolso • 
+                                    <i class="bi bi-people-fill me-1"></i>Mais de 2.800 casos de sucesso • 
+                                    <i class="bi bi-star-fill me-1"></i>4.9/5 estrelas
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="section-padding pattern-bg">
+        <div class="container">
+            <div class="social-proof mx-auto" style="max-width: 600px;" data-aos="zoom-in">
+                <h3 class="h4 fw-bold mb-4">
+                    <i class="bi bi-people-fill me-2 text-primary"></i>Junte-se a Milhares de Usuários
+                </h3>
+                <div class="stats-grid">
+                    <div class="text-center">
+                        <div class="stat-number">2.8k</div>
+                        <div class="text-muted">Usuários Ativos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="stat-number" id="texts-processed">847k</div>
+                        <div class="text-muted">Textos Processados</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="stat-number">24/7</div>
+                        <div class="text-muted">Disponibilidade</div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="text-warning mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </p>
+                    <p class="text-muted fst-italic">"Economizo 2 horas por dia com o PromptKey"</p>
+                    <small class="text-muted">
+                        <i class="bi bi-patch-check-fill text-success me-1"></i>@beyond_xyz - Usuário Pro
+                    </small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="section-padding" style="background: var(--dark);">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold mb-3">
+                    <i class="bi bi-credit-card me-3 text-primary"></i>Planos que Crescem com Você
+                </h2>
+                <p class="lead text-muted">Escolha o plano ideal baseado no seu uso de IA</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Free Plan -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-card free">
+                        <div class="text-center mb-4">
+                            <div class="badge bg-success rounded-pill px-3 py-2 mb-3">
+                                <i class="bi bi-gift-fill me-1"></i>GRÁTIS PARA SEMPRE
+                            </div>
+                            <h4 class="h3 fw-bold">
+                                <i class="bi bi-heart me-2 text-success"></i>Free
+                            </h4>
+                            <div class="display-3 fw-bold price-value">R$ 0</div>
+                            <small class="text-muted">/mês</small>
+                            
+                            <div class="characters-display text-success mt-3">
+                                50k caracteres/mês
+                            </div>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Correção de textos</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Tradução PT ↔ EN</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Resumos básicos</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Atalho personalizável</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-x-lg text-muted me-3"></i>
+                                <span class="text-muted">Suporte email</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-free w-100 py-3">
+                            <i class="bi bi-rocket-takeoff me-2"></i>COMEÇAR GRÁTIS
+                        </button>
+                        <div class="text-center mt-2">
+                            <small class="text-muted">Ideal para: Teste, uso pessoal</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-card featured">
+                        <div class="text-center mb-4">
+                            <div class="badge bg-primary rounded-pill px-3 py-2 mb-3">
+                                <i class="bi bi-star-fill me-1"></i>MAIS POPULAR
+                            </div>
+                            <h4 class="h3 fw-bold">
+                                <i class="bi bi-lightning-fill me-2 text-primary"></i>Pro
+                            </h4>
+                            <div class="display-3 fw-bold price-value">R$ 19</div>
+                            <small class="text-muted">/mês</small>
+                            
+                            <div class="characters-display text-primary mt-3">
+                                3M caracteres/mês
+                            </div>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Tudo do Free +</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Expansão de ideias</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Explicação contextual</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Tradução multilíngue</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Suporte prioritário</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-gradient w-100 py-3">
+                            <i class="bi bi-crown me-2"></i>ESCOLHER PRO
+                        </button>
+                        <div class="text-center mt-2">
+                            <small class="text-muted">Ideal para: Freelancers, estudantes</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Power Plan -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-card power">
+                        <div class="text-center mb-4">
+                            <div class="badge bg-warning rounded-pill px-3 py-2 mb-3">
+                                <i class="bi bi-lightning-charge-fill me-1"></i>MÁXIMO PODER
+                            </div>
+                            <h4 class="h3 fw-bold">
+                                <i class="bi bi-rocket me-2 text-warning"></i>Power
+                            </h4>
+                            <div class="display-3 fw-bold price-value">R$ 39</div>
+                            <small class="text-muted">/mês</small>
+                            
+                            <div class="characters-display text-warning mt-3">
+                                10M caracteres/mês
+                            </div>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Tudo do Pro +</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Análise avançada</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Prompts personalizados</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="bi bi-check-lg text-success me-3"></i>
+                                <span>Suporte dedicado</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-gradient w-100 py-3" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                            <i class="bi bi-rocket me-2"></i>ESCOLHER POWER
+                        </button>
+                        <div class="text-center mt-2">
+                            <small class="text-muted">Ideal para: Agências, redatores pesados</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                <div class="alert alert-info d-inline-block">
+                    <i class="bi bi-info-circle me-2"></i>
+                    <strong>Upgrade ou downgrade a qualquer momento • Cancele quando quiser</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section-padding" style="background: var(--darker);">
+        <div class="container text-center">
+            <div class="free-trial-banner mx-auto" style="max-width: 600px;" data-aos="zoom-in">
+                <div class="free-trial-content">
+                    <h2 class="text-white fw-bold mb-3">
+                        <i class="bi bi-rocket-takeoff me-2"></i>Comece Gratuitamente Hoje
+                    </h2>
+                    <p class="text-white mb-4">50.000 caracteres grátis todo mês, sem cartão de crédito</p>
+                    <button class="btn btn-free btn-lg px-5 py-3" id="download-btn" style="background: white; color: var(--darker) !important;" onclick="downloadPromptKey()">
+                        <i class="bi bi-gift me-2"></i>Download PromptKey
+                    </button>
+                    <div class="mt-3">
+                        <small class="text-white d-block">
+                            <i class="bi bi-shield-check me-1"></i>Sem compromisso • 
+                            <i class="bi bi-credit-card me-1"></i>Sem cartão • 
+                            <i class="bi bi-lightning me-1"></i>Ativação instantânea
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Demonstração -->
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content" style="background: var(--darker); border: 1px solid var(--border);">
+                <div class="modal-header border-bottom" style="border-color: var(--border) !important;">
+                    <h5 class="modal-title text-white" id="demoModalLabel">
+                        <i class="bi bi-camera-reels me-2 text-primary"></i>PromptKey - Demonstração Completa
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Galeria de Screenshots -->
+                    <div class="demo-gallery">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="screenshot-container">
+                                    <h6 class="text-white mb-3">
+                                        <i class="bi bi-magic me-2 text-primary"></i>PromptKey em Ação
+                                    </h6>
+                                    <div class="screenshot-frame">
+                                        <img src="../static/images/p_assistente.png" alt="PromptKey Assistente em funcionamento" class="img-fluid rounded shadow-lg">
+                                    </div>
+                                    <p class="text-muted small mt-2 text-center">
+                                        <i class="bi bi-arrow-up-circle me-1"></i>Interface principal do assistente
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="screenshot-container">
+                                    <h6 class="text-white mb-3">
+                                        <i class="bi bi-gear me-2 text-success"></i>Configurações
+                                    </h6>
+                                    <div class="screenshot-frame">
+                                        <img src="../static/images/p_config.png" alt="Tela de configurações do PromptKey" class="img-fluid rounded shadow-lg">
+                                    </div>
+                                    <p class="text-muted small mt-2 text-center">
+                                        <i class="bi bi-arrow-up-circle me-1"></i>Painel de configurações personalizáveis
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 text-center">
+                            <div class="alert alert-primary" style="background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.3); color: var(--text);">
+                                <h6 class="alert-heading text-white">
+                                    <i class="bi bi-lightbulb me-2"></i>Como Funciona
+                                </h6>
+                                <div class="row text-start">
+                                    <div class="col-md-6">
+                                        <small class="text-muted">
+                                            <strong>1. Selecione</strong> qualquer texto<br>
+                                            <strong>2. Pressione</strong> Alt+Shift+K<br>
+                                            <strong>3. Escolha</strong> a ação desejada
+                                        </small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <small class="text-muted">
+                                            <strong>4. IA processa</strong> em segundos<br>
+                                            <strong>5. Resultado</strong> colado automaticamente<br>
+                                            <strong>6. Configure</strong> atalhos personalizados
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-top" style="border-color: var(--border) !important;">
+                    <div class="me-auto">
+                        <small class="text-muted">
+                            <i class="bi bi-info-circle me-1"></i>Demonstração real do fluxo completo
+                        </small>
+                    </div>
+                    <button type="button" class="btn btn-gradient" data-bs-dismiss="modal">
+                        <i class="bi bi-fire me-2"></i>Quero o PromptKey!
+                    </button>
+                    <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg me-2"></i>Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+
+        // Active Users Counter (simulates real-time activity)
+        let activeUsers = 2847;
+        function updateActiveUsers() {
+            if (Math.random() > 0.7) {
+                const change = Math.random() > 0.5 ? 1 : -1;
+                activeUsers += change;
+                document.getElementById('active-users').textContent = activeUsers.toLocaleString('pt-BR');
+                
+                // Flash effect for increases
+                if (change > 0) {
+                    const element = document.getElementById('active-users');
+                    element.style.color = '#10b981';
+                    setTimeout(() => {
+                        element.style.color = '#ffffff';
+                    }, 1500);
+                }
+            }
+        }
+        
+        setInterval(updateActiveUsers, 15000); // Update every 15 seconds
+        
+        // Texts Processed Counter
+        let textsProcessed = 847123;
+        function updateTextsProcessed() {
+            if (Math.random() > 0.8) {
+                textsProcessed += Math.floor(Math.random() * 5) + 1;
+                const formatted = textsProcessed >= 1000000 
+                    ? (textsProcessed / 1000000).toFixed(0) + 'M'
+                    : (textsProcessed / 1000).toFixed(0) + 'k';
+                document.getElementById('texts-processed').textContent = formatted;
+                
+                // Flash effect
+                const element = document.getElementById('texts-processed');
+                element.style.color = '#6366f1';
+                setTimeout(() => {
+                    element.style.color = '';
+                }, 1500);
+            }
+        }
+        
+        setInterval(updateTextsProcessed, 8000); // Update every 8 seconds
+        
+        // Button interactions
+        document.querySelectorAll('.btn-free, .btn-gradient, .btn-outline-custom').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const btnText = this.textContent;
+                
+                // Botões que devem rolar para Download PromptKey
+                if (btnText.includes('GRÁTIS') || btnText.includes('FREE') || 
+                    btnText.includes('Quero o PromptKey') || 
+                    btnText.includes('PRO') || btnText.includes('POWER') ||
+                    btnText.includes('PROTEGER MEU DINHEIRO') ||
+                    btnText.includes('QUERO OS MESMOS RESULTADOS')) {
+                    e.preventDefault();
+                    
+                    // Scroll para o botão de download
+                    const downloadBtn = document.getElementById('download-btn');
+                    if (downloadBtn) {
+                        downloadBtn.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                        
+                        // Efeito visual no botão de destino
+                        setTimeout(() => {
+                            downloadBtn.style.transform = 'scale(1.05)';
+                            downloadBtn.style.boxShadow = '0 0 30px rgba(16, 185, 129, 0.6)';
+                            setTimeout(() => {
+                                downloadBtn.style.transform = '';
+                                downloadBtn.style.boxShadow = '';
+                            }, 2000);
+                        }, 800);
+                    }
+                } else if (this.textContent.includes('Ver Planos')) {
+                    // Scroll to pricing
+                    document.querySelector('.pricing-card').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Event listener específico para botões com classe scroll-to-download
+        document.querySelectorAll('.scroll-to-download').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Botão clicado! Fazendo scroll...');
+                
+                // Scroll para o botão de download
+                const downloadBtn = document.getElementById('download-btn');
+                if (downloadBtn) {
+                    downloadBtn.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    
+                    // Efeito visual no botão de destino
+                    setTimeout(() => {
+                        downloadBtn.style.transform = 'scale(1.05)';
+                        downloadBtn.style.boxShadow = '0 0 30px rgba(16, 185, 129, 0.6)';
+                        setTimeout(() => {
+                            downloadBtn.style.transform = '';
+                            downloadBtn.style.boxShadow = '';
+                        }, 2000);
+                    }, 800);
+                } else {
+                    console.log('Botão de download não encontrado!');
+                }
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Character count demonstrations
+        function demonstrateCharacterUsage() {
+            const examples = [
+                { text: "Correção de email", chars: "~2.5k chars" },
+                { text: "Tradução de artigo", chars: "~15k chars" },
+                { text: "Resumo de documento", chars: "~8k chars" },
+                { text: "Análise de código", chars: "~12k chars" }
+            ];
+            
+            // Could be used to show real-time usage examples
+            console.log('Usage examples:', examples);
+        }
+        
+        demonstrateCharacterUsage();
+
+        // Download PromptKey function
+        function downloadPromptKey() {
+            // Criar elemento de link temporário para download
+            const link = document.createElement('a');
+            link.href = 'https://branwum.tech/download/PromptKey.exe';
+            link.download = 'PromptKey.exe';
+            link.style.display = 'none';
+            
+            // Adicionar ao DOM, clicar e remover
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Feedback visual
+            const downloadBtn = document.getElementById('download-btn');
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '<i class="bi bi-download me-2"></i>Baixando...';
+            downloadBtn.disabled = true;
+            
+            setTimeout(() => {
+                downloadBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Download Iniciado!';
+                setTimeout(() => {
+                    downloadBtn.innerHTML = originalText;
+                    downloadBtn.disabled = false;
+                }, 2000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html> 

@@ -97,7 +97,8 @@ a {
 .sidebar.collapsed .sidebar-bottom,
 .sidebar.collapsed .menu-item span,
 .sidebar.collapsed .section-item,
-.sidebar.collapsed .docs-arrow {
+.sidebar.collapsed .docs-arrow,
+.sidebar.collapsed .projects-arrow {
     display: none;
 }
 
@@ -308,19 +309,28 @@ a {
     -webkit-user-select: none;
 }
 
-.docs-arrow {
+/* Menu Projects e sua lista */
+.menu-item.portfolio {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.docs-arrow, .projects-arrow {
     margin-left: auto;
     transition: transform 0.3s ease;
     font-size: 0.9rem;
     opacity: 0.7;
 }
 
-.menu-item.docs.expanded .docs-arrow {
+.menu-item.docs.expanded .docs-arrow,
+.menu-item.portfolio.expanded .projects-arrow {
     transform: rotate(180deg);
     opacity: 1;
 }
 
-.docs-list {
+.docs-list, .projects-list {
     display: none;
     padding-left: 2.5rem;
     background-color: rgba(44, 44, 44, 0.3);
@@ -333,7 +343,7 @@ a {
     -webkit-user-select: none;
 }
 
-.docs-list.show {
+.docs-list.show, .projects-list.show {
     display: block;
     animation: slideDown 0.3s ease;
 }
@@ -401,16 +411,6 @@ a {
 }
 
 .submenu-list.show {
-    display: block;
-    animation: slideDown 0.3s ease-out;
-}
-
-.docs-list {
-    display: none;
-    padding-left: 1rem;
-}
-
-.docs-list.show {
     display: block;
     animation: slideDown 0.3s ease-out;
 }
