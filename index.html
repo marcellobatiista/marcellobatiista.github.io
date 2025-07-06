@@ -123,6 +123,18 @@
                                 </div>
                             </a>
                         </div>
+                        <div class="menu-item submenu" onclick="toggleSubmenu2(event)">
+                            <i class="bi bi-cpu"></i>
+                            <span>Tech & Ferramentas</span>
+                            <i class="bi bi-chevron-down submenu-arrow"></i>
+                        </div>
+                        <div class="submenu-list" id="submenuList2">
+                            <a href="#" onclick="loadPost('por-que-pagar-caro-por-grammarly-se-existe-promptkey.html')">
+                                <div class="docs-item">
+                                    <span>Por que pagar caro por Grammarly se existe PromptKey?</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     <a href="https://github.com/marcellobatiista" target="_blank" rel="noopener noreferrer">
                         <div class="menu-item github">
@@ -170,6 +182,7 @@
         const docsList = document.getElementById('docsList');
         const projectsMenu = document.querySelector('.menu-item.portfolio');
         const projectsList = document.getElementById('projectsList');
+        const submenuList2 = document.getElementById('submenuList2');
 
         if (window.innerWidth <= 768) {
             // Em telas pequenas, a lógica é mostrar/esconder com ".show"
@@ -194,6 +207,7 @@
                 docsList.classList.remove("show");
                 projectsMenu.classList.remove("expanded");
                 projectsList.classList.remove("show");
+                if (submenuList2) submenuList2.classList.remove("show");
             } else {
                 toggleBtn.textContent = "«";
             }
@@ -253,6 +267,19 @@
         
         const submenu = document.querySelector('.menu-item.submenu');
         const submenuList = document.getElementById('submenuList');
+        
+        // Toggle das classes
+        submenu.classList.toggle('expanded');
+        submenuList.classList.toggle('show');
+    }
+
+    // Função para expandir/recolher o submenu 2 (Tech & Ferramentas)
+    function toggleSubmenu2(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const submenu = event.currentTarget;
+        const submenuList = document.getElementById('submenuList2');
         
         // Toggle das classes
         submenu.classList.toggle('expanded');
